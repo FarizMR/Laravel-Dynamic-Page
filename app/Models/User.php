@@ -12,8 +12,9 @@ use Illuminate\Auth\Authenticatable;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends BaseModel implements AuthenticatableContract,AuthorizableContract
+class User extends BaseModel implements AuthenticatableContract,AuthorizableContract,JWTSubject
 {
     use Authenticatable, Authorizable, HasRoles, Notifiable;
 
@@ -46,4 +47,19 @@ class User extends BaseModel implements AuthenticatableContract,AuthorizableCont
     protected $hidden = [
         'password',
     ];
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }
