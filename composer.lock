@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9be6d5f25657f3197250ff758b6e6c23",
+    "content-hash": "6a7f99bc6b6555d1a609ea11432d9a7a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2649,6 +2649,140 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "rorecek/laravel-ulid",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rorecek/laravel-ulid.git",
+                "reference": "04f9356f83ceb5c8bf2901aa7962d434e395dd5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rorecek/laravel-ulid/zipball/04f9356f83ceb5c8bf2901aa7962d434e395dd5a",
+                "reference": "04f9356f83ceb5c8bf2901aa7962d434e395dd5a",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.3|^6.0|^7.0|^8.0",
+                "php": "^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rorecek\\Ulid\\UlidServiceProvider"
+                    ],
+                    "aliases": {
+                        "Ulid": "Rorecek\\Ulid\\Facades\\Ulid"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rorecek\\Ulid\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Rorecek",
+                    "email": "info@laravelist.com",
+                    "homepage": "https://laravelist.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package for ULID (Universally Unique Lexicographically Sortable Identifier)",
+            "homepage": "https://github.com/rorecek/laravel-ulid",
+            "keywords": [
+                "guid",
+                "identifier",
+                "ulid",
+                "uuid"
+            ],
+            "time": "2021-01-07T16:55:50+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "5.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "58d5eb6c7b0eafa8bdf0a93d1ca5c214a05344cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/58d5eb6c7b0eafa8bdf0a93d1ca5c214a05344cb",
+                "reference": "58d5eb6c7b0eafa8bdf0a93d1ca5c214a05344cb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^6.0|^7.0|^8.0",
+                "illuminate/container": "^6.0|^7.0|^8.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0",
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "php": "^7.2.5|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.0|^9.0",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "5.x-dev",
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 6.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-09-01T20:02:17+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
