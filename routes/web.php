@@ -27,4 +27,10 @@ Route::group([
     Route::post('/create',[App\Http\Controllers\PageController::class, 'create']);
 });
 
+Route::group([
+    'prefix' => 'category',
+],function ($router) {
+    Route::post('/create',[App\Http\Controllers\CategoryController::class, 'create']);
+});
+
 Route::get('/api-test/page/{slug}',[App\Http\Controllers\PageController::class, 'show']);
