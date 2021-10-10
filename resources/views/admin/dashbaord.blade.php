@@ -25,8 +25,9 @@
 </head>
 
 <body>
-    <div class="section d-flex p-5">
+    <div class="section p-5">
         <h2>Admin Dashboard</h2>
+        <a class="text-muted" href="{{ url('/landing') }}"><small>Redirrect to Landing page</small></a>
         <hr>
     </div>
     <div class="section p-5 mx-5 border">

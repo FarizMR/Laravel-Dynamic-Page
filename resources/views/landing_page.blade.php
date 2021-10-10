@@ -25,9 +25,14 @@
 </head>
 
 <body>
-    <div class="section d-flex p-5">
+    <div class="section p-5">
+        <h2>Landing Page</h2>
+        <a class="text-muted" href="{{ url('/admin') }}"><small>Redirrect to Admin page</small></a>
+        <hr>
+    </div>
+    <div class="section d-flex px-5">
         @foreach ($pages as $page)
-        <div class="card m-3">
+        <div class="card mx-3">
             <div class="card-body">
                 <h5 class="card-title">{{ $page->title }}</h5>
                 <a href="{{url('/page/'.$page->slug)}}">The Link</a>

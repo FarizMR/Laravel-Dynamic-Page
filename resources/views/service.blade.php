@@ -25,8 +25,9 @@
 </head>
 
 <body>
-    <div class="section d-flex p-5">
+    <div class="section p-5">
         <h2>{{ $page->title }}</h2>
+        <a class="text-muted" href="{{ url('/landing') }}"><small>Redirrect to Landing page</small></a><br>
     </div>
     @foreach ($page->category as $category)
         <div class="section px-5 py-2">
@@ -43,16 +44,6 @@
             @endforeach
         </div>
     @endforeach
-    {{-- <div class="section d-flex p-5">
-        @foreach ($pages as $page)
-        <div class="card m-3">
-            <div class="card-body">
-                <h5 class="card-title">{{ $page->title }}</h5>
-                <a href="{{url('/page/'.$page->slug)}}">The Link</a>
-            </div>
-        </div>
-        @endforeach
-    </div> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
