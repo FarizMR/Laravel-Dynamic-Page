@@ -8,7 +8,7 @@ use App\Models\Page;
 class PageController extends Controller
 {
     public function showLandingPage(Request $request) {
-        $pages = Page::all();
+        $pages = $this->getAll();
 
         return view('landing_page',['pages' => $pages]);
     }
@@ -27,6 +27,8 @@ class PageController extends Controller
         $page = Page::create([
             'title' => $request->title,
         ]);
+
+        return back();
     }
 
     public function show(Request $request, $slug) {
@@ -40,6 +42,12 @@ class PageController extends Controller
         }
 
         return $page;
+    }
+
+    public function show_page_categories(Request $request, $page_id) {
+        $page = Page::findOrFail($page_id);
+
+        return $page->cateogry;
     }
 
     public function getAll() {
