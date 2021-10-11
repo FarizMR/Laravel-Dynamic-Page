@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use App\Models\Page;
 
 class PageController extends Controller
@@ -27,10 +26,7 @@ class PageController extends Controller
 
         $page = Page::create([
             'title' => $request->title,
-            'slug' => Str::slug($request->title,'-'),
         ]);
-
-        return $page;
     }
 
     public function show(Request $request, $slug) {

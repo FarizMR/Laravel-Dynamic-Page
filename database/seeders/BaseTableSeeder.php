@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Role;
 use App\Models\User;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ProductController;
+use App\Models\Page;
+use App\Models\Category;
+use App\Models\Product;
 
 class BaseTableSeeder extends Seeder
 {
@@ -47,88 +47,71 @@ class BaseTableSeeder extends Seeder
         $admin->assignRole('admin');
         $cashier->assignRole('cashier');
 
-        $request = new Request();
-
-        $page_controller = new PageController();
-        $category_controller = new CategoryController();
-        $product_controller = new ProductController();
-
         // Page restoran
-        $request->replace([
+        $restoran = Page::create([
             'title' => 'Restoran',
         ]);
-        $restoran = $page_controller->create($request);
 
         // Restoran Category
-        $request->replace([
+        $cat_resto_1 = Category::create([
             'page_id' => $restoran->id,
-            'title' => 'Makanan',
+            'title' => 'Makanan'
         ]);
-        $cat_resto_1 = $category_controller->create($request);
 
-        $request->replace([
+        $product_1_cat_resto_1 = Product::create([
             'category_id' => $cat_resto_1->id,
             'name' => 'Sate',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est.',
             'price' => 20000,
             'unit' => 'qty',
         ]);
-        $product_1_cat_resto_1 = $product_controller->create($request);
 
-        $request->replace([
+        $product_2_cat_resto_1 = Product::create([
             'category_id' => $cat_resto_1->id,
             'name' => 'Bakso',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est.',
             'price' => 15000,
             'unit' => 'qty',
         ]);
-        $product_2_cat_resto_1 = $product_controller->create($request);
 
-        $request->replace([
+        $cat_resto_2 = Category::create([
             'page_id' => $restoran->id,
-            'title' => 'Minuman',
+            'title' => 'Minuman'
         ]);
-        $cat_resto_2 = $category_controller->create($request);
 
-        $request->replace([
+        $product_1_cat_resto_2 = Product::create([
             'category_id' => $cat_resto_2->id,
             'name' => 'Es Teh',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est.',
             'price' => 3000,
             'unit' => 'qty',
         ]);
-        $product_1_cat_resto_2 = $product_controller->create($request);
 
-        $request->replace([
+        $product_2_cat_resto_2 = Product::create([
             'category_id' => $cat_resto_2->id,
             'name' => 'Susu putih',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In est.',
             'price' => 5500,
             'unit' => 'qty',
         ]);
-        $product_2_cat_resto_2 = $product_controller->create($request);
 
 
 
         // Page bengkel
-        $request->replace([
+        $bengkel = Page::create([
             'title' => 'Bengkel Jaya Abadi',
         ]);
-        $bengkel = $page_controller->create($request);
 
         // Bengkel category
-        $request->replace([
+        $cat_bengkel_1 = Category::create([
             'page_id' => $bengkel->id,
-            'title' => 'Servis',
+            'title' => 'Reparasi',
         ]);
-        $cat_bengkel_1 = $category_controller->create($request);
 
-        $request->replace([
+        $cat_bengkel_2 = Category::create([
             'page_id' => $bengkel->id,
             'title' => 'Lainnya',
         ]);
-        $cat_bengkel_2 = $category_controller->create($request);
-
 
     }
 }

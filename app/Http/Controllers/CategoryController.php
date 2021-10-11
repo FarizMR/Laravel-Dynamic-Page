@@ -17,7 +17,5 @@ class CategoryController extends Controller
             'page_id' => $request->page_id,
             'title' => $request->title,
         ]);
-
-        return $category;
     }
 }
